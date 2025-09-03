@@ -6,7 +6,7 @@ class OrderRepository(OrderRepositoryInterface):
     def __init__(self, db_connection)-> None:
         self.__db_connection = db_connection
     
-    def create_order(self, product: str, description: str, user_id: int)-> None:
+    def create_order(self, product: str, description: str, user_id: int)-> int:
         with self.__db_connection as database:
             try:
                 order_data = OrderTable(
@@ -17,6 +17,7 @@ class OrderRepository(OrderRepositoryInterface):
 
                 database.session.add(order_data)
                 database.session.commit()
+                return order_data.id
             except Exception as exception:
                 database.session.rollback()
                 raise exception

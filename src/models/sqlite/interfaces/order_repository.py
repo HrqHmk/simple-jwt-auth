@@ -8,7 +8,7 @@ class OrderRepositoryInterface(ABC):
         product:str,
         description:str,
         user_id: int
-    )-> None:
+    )-> int:
         pass
     
     @abstractmethod

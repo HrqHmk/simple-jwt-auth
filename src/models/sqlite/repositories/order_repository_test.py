@@ -28,9 +28,15 @@ class MockConnection():
 def test_create_order():
     mock_connection = MockConnection()
     repository = OrderRepository(mock_connection)
-    repository.create_order("Computer", "Dell computer", 1)
+
+    def fake_add(obj):
+        obj.id = 10  # simula que o flush preencheu
+    mock_connection.session.add.side_effect = fake_add
+    response = repository.create_order("Computer", "Dell computer", 1)
 
     mock_connection.session.add.assert_called_once()
+    response = repository.create_order("Computer", "Dell computer", 1)
+    assert response == 10
 
 def test_list_orders_by_user():
     mock_connection = MockConnection()
