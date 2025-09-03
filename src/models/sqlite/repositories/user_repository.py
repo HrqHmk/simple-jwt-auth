@@ -5,7 +5,7 @@ class UserRepository(UserRepositoryInterface):
     def __init__(self, db_connection)-> None:
         self.__db_connection = db_connection
     
-    def insert_user(self, username: str, password: str):
+    def insert_user(self, username: str, password: str)-> None:
         with self.__db_connection as database:
             try:
                 user_data = UserTable(

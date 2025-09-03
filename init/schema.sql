@@ -8,7 +8,7 @@ CREATE TABLE IF NOT EXISTS 'orders'(
     id INTEGER PRIMARY KEY AUTOINCREMENT,
     product TEXT NOT NULL,
     description TEXT NOT NULL,
-    order_date DATE NOT NULL,
+    created_at DATETIME DEFAULT CURRENT_TIMESTAMP,
     user_id INTEGER NOT NULL,
     FOREIGN KEY (user_id) REFERENCES users(id)
 );
