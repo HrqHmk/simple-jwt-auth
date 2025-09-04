@@ -1,8 +1,9 @@
 from typing import List
 from src.models.sqlite.interfaces.order_repository import OrderRepositoryInterface
 from src.models.sqlite.entities.order import OrderTable
+from src.controllers.interfaces.list_order_controller import ListOrderControllerInterface
 
-class ListOrderController():
+class ListOrderController(ListOrderControllerInterface):
     def __init__(self, order_repository: OrderRepositoryInterface)-> None:
         self.__order_repository = order_repository
     

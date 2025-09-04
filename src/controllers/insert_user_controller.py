@@ -1,7 +1,8 @@
 from src.models.sqlite.interfaces.user_repository import UserRepositoryInterface
 from src.drivers.password_handler import PasswordHandler
+from src.controllers.interfaces.insert_user_controller import InsertUserControllerInterface
 
-class InsertUserController():
+class InsertUserController(InsertUserControllerInterface):
     def __init__(self, user_repository: UserRepositoryInterface)-> None:
         self.__user_repository = user_repository
         self.__password_handler = PasswordHandler()
