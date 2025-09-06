@@ -1,0 +1,13 @@
+@URL=http://127.0.0.1:3000
+@token = eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE3NTY2Nzg3NDIsInVzZXJfaWQiOjJ9.gthQaUnPiyeCy0tde2JhYtaRs0n2o_Xz67BifjH5uEY
+### Health
+GET {{URL}}/health
+
+### Create User
+POST {{URL}}/user/registry
+Content-Type: application/json
+
+{
+    "username": "Henrique",
+    "password": "12345"
+}
