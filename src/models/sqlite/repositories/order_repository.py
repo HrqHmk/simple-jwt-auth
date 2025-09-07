@@ -1,4 +1,3 @@
-from sqlalchemy.orm.exc import NoResultFound
 from src.models.sqlite.entities.order import OrderTable
 from src.models.sqlite.interfaces.order_repository import OrderRepositoryInterface
 

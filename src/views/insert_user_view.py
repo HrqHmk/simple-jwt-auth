@@ -1,6 +1,7 @@
 from src.controllers.interfaces.insert_user_controller import InsertUserControllerInterface #pylint: disable=C0301
 from .http_types.http_request import HttpRequest
 from .http_types.http_response import HttpResponse
+from src.errors.types.http_bad_request import HttpBadRequestError
 from .interfaces.view_interface import ViewInterface
 
 class InsertUserView(ViewInterface):
@@ -22,4 +23,4 @@ class InsertUserView(ViewInterface):
             or not isinstance(username, str)
             or not isinstance(password, str)
         ):
-            raise Exception("Invalid input")
+            raise HttpBadRequestError("Invalid input")
