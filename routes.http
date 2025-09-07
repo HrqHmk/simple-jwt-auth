@@ -11,3 +11,12 @@ Content-Type: application/json
     "username": "Henrique",
     "password": "12345"
 }
+
+### Login User
+POST {{URL}}/user/login
+Content-Type: application/json
+
+{
+    "username": "Henrique",
+    "password": "12345"
+}
