@@ -1,4 +1,4 @@
-from sqlalchemy import Column, String, BIGINT, ForeignKey
+from sqlalchemy import Column, String, BIGINT, ForeignKey, DateTime, func
 from src.models.sqlite.settings.base import Base
 
 class OrderTable(Base):
@@ -7,7 +7,7 @@ class OrderTable(Base):
     id = Column(BIGINT, primary_key=True, autoincrement=True)
     product = Column(String)
     description = Column(String)
-    order_date = Column()
+    created_at = Column(DateTime(timezone=True), server_default=func.now(), nullable=False)
     user_id = Column(BIGINT, ForeignKey("users.id"))
 
     def __repr__(self):
