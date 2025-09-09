@@ -21,7 +21,7 @@ class ListOrderController(ListOrderControllerInterface):
             formatted_response.append({
                 "product": order.product,
                 "description": order.description,
-                "order_date": order.order_date,
+                "order_date": order.created_at,
                 "order_id": order.id
             })
         

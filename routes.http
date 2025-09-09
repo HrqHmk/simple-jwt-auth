@@ -1,5 +1,5 @@
 @URL=http://127.0.0.1:3000
-@token = eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE3NTc0MDczMTEsInVzZXJfaWQiOjF9.R3mpLQVHDVd4z6c5VJb7jUACV3AJLHJ6nebdPYLFu3g
+@token = eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE3NTc0NTAzMTcsInVzZXJfaWQiOjF9.WWw-RSE95Rlg8KW71OylRaD9tdCvIlAP4qNjmtFSPMQ
 ### Health
 GET {{URL}}/health
 
@@ -31,3 +31,9 @@ uid: 1
     "product": "Pokemon Legends",
     "description": "Pokemon Legends AZ"
 }
+
+### List Orders
+GET {{URL}}/orders/1
+Content-Type: application/json
+Authorization: Bearer {{token}}
+uid: 1

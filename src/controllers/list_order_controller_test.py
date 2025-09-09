@@ -7,14 +7,14 @@ class MockLegalOrderRepository:
             OrderTable(
                 product="Product 1", 
                 description="Product Test 1",
-                order_date="2025-01-01",
+                created_at="2025-01-01",
                 id=1,
                 user_id= user_id
             ),
             OrderTable(
                 product="Product 2", 
                 description="Product Test 2",
-                order_date="2025-02-02",
+                created_at="2025-02-02",
                 id=2,
                 user_id= user_id
             ),
